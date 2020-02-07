@@ -1,0 +1,41 @@
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+backup
+backup.*
+.\#*
+
+# OSX
+.DS_Store
+/.DS_Store
+
+# eshell files
+/eshell/history
+/eshell/lastdir
+
+# elpa packages
+/elpa/
+
+# cask packages
+.cask
+dist/
+
+# directory configuration
+.dir-locals.el
+
+ido.last
+
+.mc-lists.el
+.lsp-session-*
+transient
+
+# recenft
+places
+recentf
+
+# eww
+url
