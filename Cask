@@ -4,7 +4,6 @@
 (depends-on "helm")
 (depends-on "projectile")
 (depends-on "helm-projectile")
-(depends-on "helm-dash")
 
 (depends-on "lsp-mode")
 (depends-on "smartparens")
