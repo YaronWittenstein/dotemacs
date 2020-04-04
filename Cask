@@ -18,3 +18,5 @@
 
 (depends-on "rust-mode")
 (depends-on "cargo")
+
+(depends-on "go-mode")
