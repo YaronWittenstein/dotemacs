@@ -11,6 +11,7 @@
 
 (depends-on "evil")
 (depends-on "evil-leader")
+(depends-on "evil-multiedit")
 (depends-on "evil-surround")
 (depends-on "evil-visualstar")
 (depends-on "evil-terminal-cursor-changer")

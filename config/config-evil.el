@@ -1,5 +1,7 @@
 ; evil
 (require 'evil)
+(require 'evil-multiedit)
+
 (setq evil-default-state 'normal)
 (setq evil-auto-indent t)
 (setq evil-esc-delay 0)
@@ -22,7 +24,7 @@
   "cc" 'split-window-below
   "vv" 'split-window-right)
 
-;; C-s
+;; save-buffer
 (define-key evil-normal-state-map (kbd "C-s") 'save-buffer)
 
 ; evil-search
@@ -37,6 +39,18 @@
 ;;   (interactive)
 ;;   (evil-ex-nohighlight)
 ;;   (evil-mc-undo-all-cursors))
+
+
+; evil-multiedit
+(define-key evil-normal-state-map (kbd "SPC") 'evil-multiedit-match-symbol-and-next)
+(define-key evil-visual-state-map (kbd "SPC") 'evil-multiedit-match-symbol-and-next)
+
+;; (define-key evil-normal-state-map (kbd "C-k") 'evil-multiedit-match-and-prev)
+;; (define-key evil-visual-state-map (kbd "C-k") 'evil-multiedit-match-and-prev)
+
+(define-key evil-multiedit-state-map (kbd "C-n") 'evil-multiedit-next)
+(define-key evil-multiedit-state-map (kbd "C-k") 'evil-multiedit-prev)
+(define-key evil-multiedit-state-map (kbd "C-x") #'evil-multiedit-toggle-or-restrict-region)
 
 ;; (define-key evil-normal-state-map (kbd "RET") 'clean-search-and-mc)
 ;; (define-key evil-normal-state-map (kbd "<escape>") 'clean-search-and-mc)
