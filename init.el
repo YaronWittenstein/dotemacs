@@ -14,11 +14,7 @@
 ; config
 (require 'config-general)
 (require 'config-helm)
-(require 'config-mc)
 (require 'config-evil)
 (require 'config-rust)
 (require 'config-go)
 (require 'config-smartparens)
-
-; custom
-(require 'custom-sourcegraph)

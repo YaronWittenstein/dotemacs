@@ -14,7 +14,6 @@
 (depends-on "evil-surround")
 (depends-on "evil-visualstar")
 (depends-on "evil-terminal-cursor-changer")
-(depends-on "evil-mc")
 
 (depends-on "rust-mode")
 (depends-on "cargo")

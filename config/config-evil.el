@@ -32,15 +32,14 @@
 (define-key evil-normal-state-map (kbd "n") 'next-line)
 (define-key evil-visual-state-map (kbd "n") 'next-line)
 
-(defun clean-search-and-mc ()
-  "Clean last highlight-search and quit multiple-cursors"
-  (interactive)
-  (evil-ex-nohighlight)
-  (evil-mc-undo-all-cursors))
+;; (defun clean-search-and-mc ()
+;;   "Clean last highlight-search and quit multiple-cursors"
+;;   (interactive)
+;;   (evil-ex-nohighlight)
+;;   (evil-mc-undo-all-cursors))
 
-; Search
-(define-key evil-normal-state-map (kbd "RET") 'clean-search-and-mc)
-(define-key evil-normal-state-map (kbd "<escape>") 'clean-search-and-mc)
+;; (define-key evil-normal-state-map (kbd "RET") 'clean-search-and-mc)
+;; (define-key evil-normal-state-map (kbd "<escape>") 'clean-search-and-mc)
 
 ;; C-h
 (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char)
