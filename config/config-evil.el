@@ -1,6 +1,7 @@
 ; evil
 (require 'evil)
 (require 'evil-multiedit)
+(require 'evil-visualstar)
 
 (setq evil-default-state 'normal)
 (setq evil-auto-indent t)
@@ -40,6 +41,8 @@
 ;;   (evil-ex-nohighlight)
 ;;   (evil-mc-undo-all-cursors))
 
+; evil-visualstar
+(global-evil-visualstar-mode)
 
 ; evil-multiedit
 (define-key evil-normal-state-map (kbd "SPC") 'evil-multiedit-match-symbol-and-next)
