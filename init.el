@@ -15,6 +15,7 @@
 (require 'config-general)
 (require 'config-helm)
 (require 'config-evil)
+(require 'config-lsp)
 (require 'config-rust)
 (require 'config-go)
 (require 'config-smartparens)
