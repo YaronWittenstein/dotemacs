@@ -14,6 +14,7 @@
 ; config
 (require 'config-general)
 (require 'config-helm)
+(require 'config-company)
 (require 'config-evil)
 (require 'config-lsp)
 (require 'config-rust)
