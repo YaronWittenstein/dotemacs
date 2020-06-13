@@ -1,4 +1,5 @@
 (require 'lsp-mode)
+(require 'lsp-ui)
 
 (with-eval-after-load 'lsp-mode
   (setq lsp-file-watch-threshold 10000)

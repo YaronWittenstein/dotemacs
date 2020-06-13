@@ -15,6 +15,7 @@
 (require 'config-general)
 (require 'config-helm)
 (require 'config-company)
+(require 'config-flycheck)
 (require 'config-evil)
 (require 'config-lsp)
 (require 'config-rust)

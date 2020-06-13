@@ -1,5 +1,6 @@
 ; evil
 (require 'evil)
+(require 'evil-leader)
 (require 'evil-multiedit)
 (require 'evil-visualstar)
 
@@ -12,18 +13,27 @@
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
 (evil-leader/set-key
-  ","  'helm-projectile
-  "m"  'helm-find-files
-  "b"  'helm-buffers-list
-  "h"  'helm-find-files-history
-  "k"  'helm-show-kill-ring
-  "d"  'helm-dash-at-point
-  "r"  'recentf-open-files
   "w"  'save-buffer
   "q"  'evil-quit
   "x"  'evil-save-and-quit
   "cc" 'split-window-below
   "vv" 'split-window-right)
+
+(with-eval-after-load 'recentf
+  (evil-leader/set-key
+    "r"  'recentf-open-files))
+
+(with-eval-after-load 'helm
+  (evil-leader/set-key
+    ","  'helm-projectile
+    "m"  'helm-find-files
+    "b"  'helm-buffers-list
+    "h"  'helm-find-files-history
+    "k"  'helm-show-kill-ring))
+
+(with-eval-after-load 'lsp-ui
+  (evil-leader/set-key
+    "d"  'lsp-ui-doc))
 
 ;; save-buffer
 (define-key evil-normal-state-map (kbd "C-s") 'save-buffer)
