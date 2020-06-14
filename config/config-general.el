@@ -25,6 +25,8 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 10)
 (setq recentf-max-saved-items 10)
+
+;; Colemak
 (define-key recentf-dialog-mode-map (kbd "C-n") 'next-line)
 (define-key recentf-dialog-mode-map (kbd "C-k") 'previous-line)
 (define-key recentf-dialog-mode-map (kbd "n") 'next-line)
