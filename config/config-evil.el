@@ -3,6 +3,7 @@
 (require 'evil-leader)
 (require 'evil-multiedit)
 (require 'evil-visualstar)
+(require 'evil-magit)
 
 (setq evil-default-state 'normal)
 (setq evil-auto-indent t)
@@ -25,15 +26,28 @@
 
 (with-eval-after-load 'helm
   (evil-leader/set-key
-    ","  'helm-projectile
     "m"  'helm-find-files
+    "f"  'helm-projectile
     "b"  'helm-buffers-list
     "h"  'helm-find-files-history
     "k"  'helm-show-kill-ring))
 
+(with-eval-after-load 'cargo
+  (evil-leader/set-key
+    "c" 'cargo-process-build
+    "t" 'cargo-process-current-test))
+  
+
+;; lsp-ui
 (with-eval-after-load 'lsp-ui
   (evil-leader/set-key
     "d"  'lsp-ui-doc))
+
+;; magit
+(with-eval-after-load 'magit
+  (evil-leader/set-key
+    "s" 'magit-status
+    "," 'magit-file-dispatch))
 
 ;; save-buffer
 (define-key evil-normal-state-map (kbd "C-s") 'save-buffer)

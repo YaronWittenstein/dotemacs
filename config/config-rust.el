@@ -25,4 +25,16 @@
   (add-hook 'rust-mode-hook #'lsp)
   (setq lsp-rust-server 'rls))
 
+;; cargo
+(with-eval-after-load 'cargo
+  (setq cargo-process--command-build "+nightly build")
+  (setq cargo-process--command-current-test "+nightly test -- --nocapture")
+
+  ;; Colemak bindings
+  (define-key cargo-process-mode-map (kbd "n") 'next-line)
+  (define-key cargo-process-mode-map (kbd "k") 'previous-line)
+
+  (define-key cargo-process-mode-map (kbd "C-n") 'forward-button)
+  (define-key cargo-process-mode-map (kbd "C-k") 'backward-button))
+
 (provide 'config-rust)

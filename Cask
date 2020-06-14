@@ -6,6 +6,7 @@
 (depends-on "company")
 (depends-on "flycheck")
 (depends-on "lsp-mode")
+(depends-on "magit")
 
 (depends-on "helm-projectile")
 (depends-on "flycheck-inline")
@@ -26,3 +27,4 @@
 (depends-on "flycheck-rust")
 
 (depends-on "go-mode")
+(depends-on "typescript-mode")
