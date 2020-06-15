@@ -28,15 +28,18 @@
 ;; cargo
 (with-eval-after-load 'cargo
   (setq cargo-process--command-build "+nightly build")
-  (setq cargo-process--command-current-test "+nightly test -- --nocapture")
+  (setq cargo-process--command-test "+nightly test")
+  (setq cargo-process--command-current-test "+nightly test")
+  (setq cargo-process--command-current-file-tests "+nightly test")
+
 
   ;; Colemak bindings
   (define-key cargo-process-mode-map (kbd "n") 'next-line)
   (define-key cargo-process-mode-map (kbd "k") 'previous-line)
-
   (define-key cargo-process-mode-map (kbd "C-n") 'forward-button)
   (define-key cargo-process-mode-map (kbd "C-k") 'backward-button)
 
+  ;; other
   (define-key cargo-process-mode-map (kbd "<escape>") 'evil-quit)
   (define-key cargo-process-mode-map (kbd "C-w") 'evil-window-next))
 

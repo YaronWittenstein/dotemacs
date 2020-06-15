@@ -44,7 +44,8 @@
 (with-eval-after-load 'cargo
   (evil-leader/set-key
     "," 'cargo-process-build
-    "t" 'cargo-process-current-test))
+    "t" 'cargo-process-current-test
+    "a" 'cargo-process-test))
 
 (defun toggle-maximize-buffer () 
   (interactive)
@@ -55,13 +56,19 @@
       (window-configuration-to-register '_)
       (delete-other-windows))))
 
-(defun kill-cargo-windows ()
-  (interactive)
-  "Kills Cargo buffers"
-  (delete-windows-on "*Cargo Build*")
-  (delete-windows-on "*Cargo Test*"))
+(defun kill-buffer-and-window (buf-name)
+  (let ((buf (get-buffer buf-name)))
+    (if (buffer-live-p buf)
+	(delete-windows-on buf))))
 
-(define-key evil-normal-state-map (kbd "<escape>") 'kill-cargo-windows)
+(with-eval-after-load 'cargo
+    (defun kill-cargo-windows ()
+	(interactive)
+	"Kills Cargo buffers"
+	(kill-buffer-and-window "*Cargo Build*")
+	(kill-buffer-and-window "*Cargo Test*"))
+
+    (define-key evil-normal-state-map (kbd "<escape>") 'kill-cargo-windows))
 
 ;; save-buffer
 (define-key evil-normal-state-map (kbd "C-s") 'save-buffer)
