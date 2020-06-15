@@ -37,6 +37,7 @@
   (define-key cargo-process-mode-map (kbd "C-n") 'forward-button)
   (define-key cargo-process-mode-map (kbd "C-k") 'backward-button)
 
-  (define-key cargo-process-mode-map (kbd "<escape>") 'evil-quit))
+  (define-key cargo-process-mode-map (kbd "<escape>") 'evil-quit)
+  (define-key cargo-process-mode-map (kbd "C-w") 'evil-window-next))
 
 (provide 'config-rust)

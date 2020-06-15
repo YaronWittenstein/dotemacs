@@ -17,8 +17,8 @@
   "w"  'save-buffer
   "q"  'evil-quit
   "x"  'evil-save-and-quit
-  "cc" 'split-window-below
-  "vv" 'split-window-right)
+  "c"  'split-window-below
+  "v"  'split-window-right)
 
 (with-eval-after-load 'recentf
   (evil-leader/set-key
@@ -28,15 +28,8 @@
   (evil-leader/set-key
     "m"  'helm-find-files
     "f"  'helm-projectile
-    "b"  'helm-buffers-list
-    "h"  'helm-find-files-history
+    "z"  'helm-buffers-list
     "k"  'helm-show-kill-ring))
-
-(with-eval-after-load 'cargo
-  (evil-leader/set-key
-    "c" 'cargo-process-build
-    "t" 'cargo-process-current-test))
-  
 
 ;; lsp-ui
 (with-eval-after-load 'lsp-ui
@@ -46,8 +39,29 @@
 ;; magit
 (with-eval-after-load 'magit
   (evil-leader/set-key
-    "s" 'magit-status
-    "," 'magit-file-dispatch))
+    "s" 'magit-status))
+
+(with-eval-after-load 'cargo
+  (evil-leader/set-key
+    "," 'cargo-process-build
+    "t" 'cargo-process-current-test))
+
+(defun toggle-maximize-buffer () 
+  (interactive)
+  "Maximize buffer"
+  (if (= 1 (length (window-list)))
+      (jump-to-register '_) 
+    (progn
+      (window-configuration-to-register '_)
+      (delete-other-windows))))
+
+(defun kill-cargo-windows ()
+  (interactive)
+  "Kills Cargo buffers"
+  (delete-windows-on "*Cargo Build*")
+  (delete-windows-on "*Cargo Test*"))
+
+(define-key evil-normal-state-map (kbd "<escape>") 'kill-cargo-windows)
 
 ;; save-buffer
 (define-key evil-normal-state-map (kbd "C-s") 'save-buffer)
@@ -63,11 +77,8 @@
 (global-evil-visualstar-mode)
 
 ; evil-multiedit
-(define-key evil-normal-state-map (kbd "SPC") 'evil-multiedit-match-symbol-and-next)
-(define-key evil-visual-state-map (kbd "SPC") 'evil-multiedit-match-symbol-and-next)
-
-;; (define-key evil-normal-state-map (kbd "C-k") 'evil-multiedit-match-and-prev)
-;; (define-key evil-visual-state-map (kbd "C-k") 'evil-multiedit-match-and-prev)
+(define-key evil-normal-state-map (kbd "SPC") 'toggle-maximize-buffer)
+(define-key evil-visual-state-map (kbd "SPC") 'toggle-maximize-buffer)
 
 (define-key evil-multiedit-state-map (kbd "C-n") 'evil-multiedit-next)
 (define-key evil-multiedit-state-map (kbd "C-k") 'evil-multiedit-prev)
