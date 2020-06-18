@@ -39,7 +39,8 @@
 ;; magit
 (with-eval-after-load 'magit
   (evil-leader/set-key
-    "s" 'magit-status))
+    "g" 'magit-status
+    "s" 'magit-stage-modified))
 
 (with-eval-after-load 'cargo
   (evil-leader/set-key

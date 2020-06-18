@@ -10,7 +10,7 @@
   ;; smartparens
   (add-hook 'rust-mode-hook 'smartparens-mode)
 
-  ;; fly-check
+  ;; flycheck
   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
   ;; identation will use spaces.
