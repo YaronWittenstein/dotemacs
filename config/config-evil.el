@@ -48,15 +48,6 @@
     "t" 'cargo-process-current-test
     "a" 'cargo-process-test))
 
-(defun toggle-maximize-buffer () 
-  (interactive)
-  "Maximize buffer"
-  (if (= 1 (length (window-list)))
-      (jump-to-register '_) 
-    (progn
-      (window-configuration-to-register '_)
-      (delete-other-windows))))
-
 (defun kill-buffer-and-window (buf-name)
   (let ((buf (get-buffer buf-name)))
     (if (buffer-live-p buf)
@@ -85,8 +76,7 @@
 (global-evil-visualstar-mode)
 
 ; evil-multiedit
-(define-key evil-normal-state-map (kbd "SPC") 'toggle-maximize-buffer)
-(define-key evil-visual-state-map (kbd "SPC") 'toggle-maximize-buffer)
+(define-key evil-normal-state-map (kbd "m") 'evil-multiedit-match-all)
 
 (define-key evil-multiedit-state-map (kbd "C-n") 'evil-multiedit-next)
 (define-key evil-multiedit-state-map (kbd "C-k") 'evil-multiedit-prev)
@@ -101,6 +91,19 @@
 
 ;; Windows
 (define-key evil-normal-state-map (kbd "C-w") 'evil-window-next)
+
+;; Maximize buffer
+(defun toggle-maximize-buffer () 
+  (interactive)
+  "Maximize buffer"
+  (if (= 1 (length (window-list)))
+      (jump-to-register '_) 
+    (progn
+      (window-configuration-to-register '_)
+      (delete-other-windows))))
+
+(define-key evil-normal-state-map (kbd "SPC") 'toggle-maximize-buffer)
+(define-key evil-visual-state-map (kbd "SPC") 'toggle-maximize-buffer)
 
 ; evil-terminal-cursor-changer
 (setq evil-motion-state-cursor 'box)
