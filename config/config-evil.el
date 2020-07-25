@@ -3,12 +3,16 @@
 (require 'evil-leader)
 (require 'evil-multiedit)
 (require 'evil-visualstar)
+(require 'evil-surround)
 (require 'evil-magit)
 
 (setq evil-default-state 'normal)
 (setq evil-auto-indent t)
 (setq evil-esc-delay 0)
 (evil-mode 1)
+
+;; Override the default mapping of `Y` 
+(customize-set-variable 'evil-want-Y-yank-to-eol t)
 
 ; evil-leader (should be enabled before `evil-mode`)
 (global-evil-leader-mode)
@@ -71,6 +75,9 @@
 ; Colemak
 (define-key evil-normal-state-map (kbd "n") 'next-line)
 (define-key evil-visual-state-map (kbd "n") 'next-line)
+
+;; evil-surround
+(global-evil-surround-mode 1)
 
 ; evil-visualstar
 (global-evil-visualstar-mode)
