@@ -93,7 +93,7 @@
 (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char)
 
 ;; Comments
-(define-key evil-normal-state-map (kbd "gcc") 'comment-line)
+(define-key evil-normal-state-map (kbd "gc") 'comment-line)
 (define-key evil-visual-state-map (kbd "gc") 'comment-or-uncomment-region)
 
 ;; Windows
