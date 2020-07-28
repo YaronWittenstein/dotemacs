@@ -32,6 +32,9 @@
 (define-key recentf-dialog-mode-map (kbd "n") 'next-line)
 (define-key recentf-dialog-mode-map (kbd "k") 'previous-line)
 
+; Save mini-buffer history 
+(savehist-mode t)
+
 ; Don't create lockfiles
 (setq create-lockfiles nil)
 
