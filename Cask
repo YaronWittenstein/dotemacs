@@ -27,4 +27,7 @@
 (depends-on "flycheck-rust")
 
 (depends-on "go-mode")
+
+(depends-on "tide")
+(depends-on "prettier-js")
 (depends-on "typescript-mode")
