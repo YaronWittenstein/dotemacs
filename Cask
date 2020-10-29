@@ -16,6 +16,7 @@
 (depends-on "dracula-theme")
 
 (depends-on "evil")
+(depends-on "evil-escape")
 (depends-on "evil-leader")
 (depends-on "evil-multiedit")
 (depends-on "evil-surround")
