@@ -5,7 +5,7 @@
 (require 'evil-multiedit)
 (require 'evil-visualstar)
 (require 'evil-surround)
-(require 'evil-magit)
+;(require 'evil-magit)
 
 (setq evil-default-state 'normal)
 (setq evil-auto-indent t)

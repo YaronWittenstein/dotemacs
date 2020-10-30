@@ -25,7 +25,7 @@
 (require 'config-company)
 (require 'config-flycheck)
 (require 'config-smartparens)
-(require 'config-magit)
+; (require 'config-magit)
 (require 'config-evil)
 (require 'config-lsp)
 (require 'config-rust)
