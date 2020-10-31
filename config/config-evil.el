@@ -79,7 +79,7 @@
 
 (evil-escape-mode 1)
 (setq-default evil-escape-delay 0.2)
-(setq-default evil-escape-key-sequence "nn")
+(setq-default evil-escape-key-sequence "ne")
 
 ;; evil-surround
 (global-evil-surround-mode 1)
