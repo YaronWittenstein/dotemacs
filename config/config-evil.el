@@ -1,6 +1,5 @@
 ; evil
 (require 'evil)
-(require 'evil-escape)
 (require 'evil-leader)
 (require 'evil-multiedit)
 (require 'evil-visualstar)
@@ -76,10 +75,6 @@
 ; Colemak
 (define-key evil-normal-state-map (kbd "n") 'next-line)
 (define-key evil-visual-state-map (kbd "n") 'next-line)
-
-(evil-escape-mode 1)
-(setq-default evil-escape-delay 0.2)
-(setq-default evil-escape-key-sequence "ne")
 
 ;; evil-surround
 (global-evil-surround-mode 1)
