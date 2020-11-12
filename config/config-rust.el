@@ -20,10 +20,10 @@
   ;; treat underscore as part of a word
   (add-hook 'rust-mode-hook '(lambda () (modify-syntax-entry ?_ "w"))))
 
-;; rls
+;; rust-analyzer
 (with-eval-after-load 'lsp-mode
   (add-hook 'rust-mode-hook #'lsp)
-  (setq lsp-rust-server 'rls))
+  (setq lsp-rust-server 'rust-analyzer))
 
 ;; cargo
 (with-eval-after-load 'cargo
@@ -31,7 +31,6 @@
   (setq cargo-process--command-test "+nightly test")
   (setq cargo-process--command-current-test "+nightly test")
   (setq cargo-process--command-current-file-tests "+nightly test")
-
 
   ;; Colemak bindings
   (define-key cargo-process-mode-map (kbd "n") 'next-line)

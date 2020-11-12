@@ -1,6 +1,8 @@
 (source gnu)
 (source melpa)
 
+(depends-on "undo-fu")
+
 (depends-on "helm")
 (depends-on "projectile")
 (depends-on "company")
