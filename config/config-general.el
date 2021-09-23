@@ -1,5 +1,5 @@
 ; Theme
-(load-theme 'dracula t)
+;(load-theme 'dracula t)
 
 ; Turn off UI elements
 (menu-bar-mode -1)
@@ -32,7 +32,7 @@
 (define-key recentf-dialog-mode-map (kbd "n") 'next-line)
 (define-key recentf-dialog-mode-map (kbd "k") 'previous-line)
 
-; Save mini-buffer history 
+; Save mini-buffer history
 (savehist-mode t)
 
 ; Don't create lockfiles

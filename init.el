@@ -1,11 +1,9 @@
 (require 'package)
 
+(setq warning-minimum-level :emergency)
 (setq package-enable-at-startup nil)
 
-(package-initialize)
-
 (require 'cask "~/.cask/cask.el")
-
 (cask-initialize)
 
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
@@ -25,7 +23,6 @@
 (require 'config-company)
 (require 'config-flycheck)
 (require 'config-smartparens)
-(require 'config-magit)
 (require 'config-evil)
 (require 'config-lsp)
 (require 'config-rust)

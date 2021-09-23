@@ -4,7 +4,6 @@
 (require 'evil-multiedit)
 (require 'evil-visualstar)
 (require 'evil-surround)
-;(require 'evil-magit)
 
 (setq evil-default-state 'normal)
 (setq evil-auto-indent t)
@@ -12,11 +11,10 @@
 (evil-mode 1)
 
 ;; undo / redo
-(global-undo-tree-mode -1)
 (define-key evil-normal-state-map "u" 'undo-fu-only-undo)
 (define-key evil-normal-state-map "\C-r" 'undo-fu-only-redo)
 
-;; Override the default mapping of `Y` 
+;; Override the default mapping of `Y`
 (customize-set-variable 'evil-want-Y-yank-to-eol t)
 
 ; evil-leader (should be enabled before `evil-mode`)
@@ -105,11 +103,11 @@
 (define-key evil-normal-state-map (kbd "C-w") 'evil-window-next)
 
 ;; Maximize buffer
-(defun toggle-maximize-buffer () 
+(defun toggle-maximize-buffer ()
   (interactive)
   "Maximize buffer"
   (if (= 1 (length (window-list)))
-      (jump-to-register '_) 
+      (jump-to-register '_)
     (progn
       (window-configuration-to-register '_)
       (delete-other-windows))))

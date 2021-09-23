@@ -18,7 +18,6 @@
 (depends-on "dracula-theme")
 
 (depends-on "evil")
-(depends-on "evil-magit")
 (depends-on "evil-leader")
 (depends-on "evil-multiedit")
 (depends-on "evil-surround")
